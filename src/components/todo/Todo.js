@@ -9,9 +9,15 @@ const Todo = () => {
         {id : 2, title: "learn"},
         {id : 3, title: "help"}
     ]
+
+    const allTodos = (newOneTodo) => {
+        todos.push(newOneTodo)
+
+        console.log(todos)
+    }
     return (
         <div>
-            <TodoCreate />
+            <TodoCreate onCreateTodo={allTodos} />
             <h3>Todo List</h3>
             <TodoList dataTodos = {todos} />
         </div>

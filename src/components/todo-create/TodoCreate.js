@@ -1,15 +1,17 @@
 import './TodoCreate.css';
 
-function TodoCreate() {
+function TodoCreate(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        const newTodo = {
+        const newOneTodo = {
             id: Math.floor(Math.random() * 100 + 1),
             title: 'read book'
         }
 
-        console.log(newTodo)
+        props.onCreateTodo(newOneTodo)
+
+        console.log(newOneTodo)
     }
     return (
         <div>
