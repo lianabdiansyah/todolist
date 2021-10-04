@@ -1,17 +1,17 @@
 import TodoList from '../todo-list/TodoList';
 import TodoCreate from '../todo-create/TodoCreate';
 import './Todo.css'
+import { useState } from "react";
 
 const Todo = () => {
-
-    const todos = [
-        {id : 1, title: "eat"},
-        {id : 2, title: "learn"},
-        {id : 3, title: "help"}
-    ]
+    const [todos, setTodos] = useState([
+      { id: 1, title: "eat" },
+      { id: 2, title: "learn" },
+      { id: 3, title: "help" },
+    ]);
 
     const allTodos = (newOneTodo) => {
-        todos.push(newOneTodo)
+        setTodos(todos.concat(newOneTodo))
 
         console.log(todos)
     }
